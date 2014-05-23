@@ -35,8 +35,7 @@ svg {
 }
 
 #chart1 {
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 100px;
 }
 </style>
 <body class='with-3d-shadow with-transitions'>
@@ -66,7 +65,7 @@ var chart;
 nv.addGraph(function() {
   chart = nv.models.lineChart()
   .options({
-    margin: {left: 100, bottom: 100},
+    margin: {left: 40, bottom: 100},
     x: function(d,i) { return i},
     showXAxis: true,
     showYAxis: true,
@@ -76,12 +75,12 @@ nv.addGraph(function() {
 
   // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
   chart.xAxis
-    // .axisLabel("Time (s)")
-    // .tickFormat(d3.format('1f'));
-    .tickFormat(d3.format('f'));
+    .axisLabel("Promesas")
+    .tickFormat(d3.format('1f'));
+    // .tickFormat(d3.format('f'));
 
   chart.yAxis
-    // .axisLabel('Voltage (v)')
+    .axisLabel("Cumplimiento")
     .tickFormat(d3.format('%'))
     ;
 
@@ -114,13 +113,13 @@ function sinAndCos() {
     {
       key: "Bachelet 2014-2018",
       color: '#F8981D',
-      values: [ {x:'21 de mayo' ,y: 0} , {x:1 ,y: 0.54} , {x: 2 ,y: 0.93}, {x: 3 ,y: 0.67}, {x: 4 ,y: 0.78} , {x:5 ,y: 0} , {x:6 ,y: 0.54} , {x:7 ,y: 0.93}, {x:8 ,y: 0.67}]
+      values: [ {x:0 ,y: 0} , {x:1 ,y: 0.54} , {x: 2 ,y: 0.93}, {x: 3 ,y: 0.67}, {x: 4 ,y: 0.78} , {x:5 ,y: 0.13} , {x:6 ,y: 0.54}]
     }
     ,
     {
       key: "Piñera 2010-2014",
       color: '#1795CF',
-      values: [ {x:'21 de mayo' ,y: 0} , {x:2012 ,y: 0.54} , {x:2012 ,y: 0.93}, {x:2013 ,y: 0.67}, {x:2013 ,y: 0.93}, {x:2014 ,y: 0.74}]
+      values: [ {x:0 ,y: 0} , {x:1 ,y: 0.27} , {x:2 ,y: 0.54} , {x:3 ,y: 0.93}, {x:4 ,y: 0.67}, {x:5 ,y: 0.93}, {x:6 ,y: 0.74}]
     }
   ];
 }
